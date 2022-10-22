@@ -21,7 +21,11 @@ fi
 # Step 3:
 # List kubernetes pods
 kubectl get pods
-
+echo "Please wait for pod to start";
+sleep 8
+kubectl get pods
+sleep 5
 # Step 4:
 # Forward the container port to a host
-# kubectl port-forward mlpred 8080:5000
+kubectl port-forward mlpred 8080:80
+kubectl logs mlpred
